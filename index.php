@@ -2,7 +2,7 @@
 
 $format = "Y-m-d H:i";
 $timeFormat = "H:i";
-$fromTime = DateTime::createFromFormat($format, '2020-02-02 7:00');
+$fromTime = DateTime::createFromFormat($format, '2020-02-02 6:00');
 $toTime = DateTime::createFromFormat($format, '2020-02-02 08:30');
 $interval = 30; // minutes
 
