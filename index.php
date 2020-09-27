@@ -15,13 +15,13 @@ while($fromTime < $toTime){
 	$isWorkingDay = $dayOfWeek >=1 && $dayOfWeek < 6;
 
 	if($isSaturday){
-		$rate3StartTime = DateTime::createFromFormat($timeFormat, '0:00')->format('H:i');
-		$rate3EndTime = DateTime::createFromFormat($timeFormat, '6:59')->format("H:i");
+		$rate3StartTime = DateTime::createFromFormat($timeFormat, '0:00')->format($timeFormat);
+		$rate3EndTime = DateTime::createFromFormat($timeFormat, '6:59')->format($timeFormat);
 		
-		$rate2StartTime = DateTime::createFromFormat($timeFormat, '7:00')->format("H:i");
-		$rate2EndTime = DateTime::createFromFormat($timeFormat, '23:59')->format("H:i");
+		$rate2StartTime = DateTime::createFromFormat($timeFormat, '7:00')->format($timeFormat);
+		$rate2EndTime = DateTime::createFromFormat($timeFormat, '23:59')->format($timeFormat);
 
-		$tempFromTime = $fromTime->format("H:i");
+		$tempFromTime = $fromTime->format($timeFormat);
 
 		if($tempFromTime >= $rate2StartTime && $tempFromTime <= $rate2EndTime){
 			$rangeArr["rate2"] += $interval;
@@ -31,25 +31,25 @@ while($fromTime < $toTime){
 		}
 	}
 	if($isSunday){
-		$rate3StartTime = DateTime::createFromFormat($timeFormat, '0:00')->format("H:i");
-		$rate3EndTime = DateTime::createFromFormat($timeFormat, '23:59')->format("H:i");
+		$rate3StartTime = DateTime::createFromFormat($timeFormat, '0:00')->format($timeFormat);
+		$rate3EndTime = DateTime::createFromFormat($timeFormat, '23:59')->format($timeFormat);
 
-		$tempFromTime = $fromTime->format("H:i");
+		$tempFromTime = $fromTime->format($timeFormat);
 		if($tempFromTime >= $rate3StartTime && $tempFromTime <= $rate3EndTime){
 			$rangeArr["rate3"] += $interval;
 		}
 	}
 	if($isWorkingDay){
-		$rate3StartTime = DateTime::createFromFormat($timeFormat, '0:00')->format('H:i');
-		$rate3EndTime = DateTime::createFromFormat($timeFormat, '06:59')->format("H:i");
+		$rate3StartTime = DateTime::createFromFormat($timeFormat, '0:00')->format($timeFormat);
+		$rate3EndTime = DateTime::createFromFormat($timeFormat, '06:59')->format($timeFormat);
 
-		$rate1StartTime = DateTime::createFromFormat($timeFormat, '7:00')->format('H:i');
-		$rate1EndTime = DateTime::createFromFormat($timeFormat, '21:59')->format("H:i");
+		$rate1StartTime = DateTime::createFromFormat($timeFormat, '7:00')->format($timeFormat);
+		$rate1EndTime = DateTime::createFromFormat($timeFormat, '21:59')->format($timeFormat);
 		
-		$rate2StartTime = DateTime::createFromFormat($timeFormat, '20:00')->format("H:i");
-		$rate2EndTime = DateTime::createFromFormat($timeFormat, '23:59')->format("H:i");
+		$rate2StartTime = DateTime::createFromFormat($timeFormat, '20:00')->format($timeFormat);
+		$rate2EndTime = DateTime::createFromFormat($timeFormat, '23:59')->format($timeFormat);
 
-		$tempFromTime = $fromTime->format("H:i");
+		$tempFromTime = $fromTime->format($timeFormat);
 
 		if($tempFromTime >= $rate1StartTime && $tempFromTime <= $rate1EndTime){
 			$rangeArr["rate1"] += $interval;
